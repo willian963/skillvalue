@@ -18,6 +18,9 @@ public class solution2 {
 		try {
 
 			// in = new BufferedReader(new FileReader(new File(args[0])));
+			String x = new String("xyz");
+			String y = "abc";
+			System.out.println(x+y);
 
 			FileReader fr = new FileReader(new File(args[0]));
 			BufferedReader buff = new BufferedReader(fr);
@@ -42,6 +45,7 @@ public class solution2 {
 					}
 				}
 				System.out.println(result);
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

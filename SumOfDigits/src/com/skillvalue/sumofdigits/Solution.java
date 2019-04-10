@@ -17,7 +17,6 @@ public class Solution {
 			BufferedReader in;
 			args[0] = "C:/SkillValueGit/skillvalue/SumOfDigits/Inputs/SumOfDigits.txt";
 			try {
-				// in = new BufferedReader(new FileReader(new File(args[0])));
 				FileReader fr = new FileReader(new File(args[0]));
 				BufferedReader buff = new BufferedReader(fr);
 				String line = null;
