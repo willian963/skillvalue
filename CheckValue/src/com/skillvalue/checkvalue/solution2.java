@@ -8,6 +8,12 @@ public class solution2 {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
+		System.out.println("Inputs      Expected");
+		System.out.println("101         2");
+		System.out.println("3299        5");
+		System.out.println("904         4");
+		System.out.println("4772        2");
+		System.out.println("385         7");
 		args[0] = "C:/SkillValueGit/skillvalue/CheckValue/Inputs/CheckDigit.txt";
 		try {
 
@@ -16,6 +22,7 @@ public class solution2 {
 			FileReader fr = new FileReader(new File(args[0]));
 			BufferedReader buff = new BufferedReader(fr);
 			String line = null;
+			System.out.println("\nRESULTS");
 			while ((line = buff.readLine()) != null) {
 
 				//in = new BufferedReader(new FileReader(new File(args[0])));
