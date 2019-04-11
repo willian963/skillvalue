@@ -17,18 +17,11 @@ public class solution2 {
 		args[0] = "C:/SkillValueGit/skillvalue/CheckValue/Inputs/CheckDigit.txt";
 		try {
 
-			// in = new BufferedReader(new FileReader(new File(args[0])));
-			String x = new String("xyz");
-			String y = "abc";
-			System.out.println(x+y);
-
 			FileReader fr = new FileReader(new File(args[0]));
 			BufferedReader buff = new BufferedReader(fr);
 			String line = null;
 			System.out.println("\nRESULTS");
 			while ((line = buff.readLine()) != null) {
-
-				//in = new BufferedReader(new FileReader(new File(args[0])));
 
 				int i = 0;
 				int result = 0;
