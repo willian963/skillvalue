@@ -1,4 +1,4 @@
-package com.rackerrannk.formingMagicSquare;
+package com.rackerrank.formingMagicSquare;
 
 public class FormingMagicSquare2 {
 	public static void main(String[] args) {

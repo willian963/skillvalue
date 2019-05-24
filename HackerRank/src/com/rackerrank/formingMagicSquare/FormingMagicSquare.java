@@ -1,4 +1,4 @@
-package com.rackerrannk.formingMagicSquare;
+package com.rackerrank.formingMagicSquare;
 
 import java.util.HashMap;
 import java.util.Map;

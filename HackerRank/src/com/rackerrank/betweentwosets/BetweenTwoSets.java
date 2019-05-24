@@ -1,4 +1,4 @@
-package com.rackerank.betweentwosets;
+package com.rackerrank.betweentwosets;
 
 public class BetweenTwoSets {
 
