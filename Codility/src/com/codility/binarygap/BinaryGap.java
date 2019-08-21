@@ -15,6 +15,10 @@ public class BinaryGap {
 
 	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String args[]) throws IOException {
+		
+		File file = new File(System.getProperty("user.dir") + "/Inputs/BinaryGap.txt");
+		String path = file.getAbsolutePath();
+		
 		System.out.println("Inputs      Expected");
 		System.out.println("1041        5");
 		System.out.println("15          0");
@@ -23,9 +27,10 @@ public class BinaryGap {
 		System.out.println("529         4");
 		System.out.println("20          1");
 		BufferedReader in;
-		args[0] = "C:/SkillValue/Codility/Inputs/BinaryGap.txt";
+		//args[0] = path;
+		//args[0] = "C:/SkillValue/Codility/Inputs/BinaryGap.txt";
 		try {
-			FileReader fr = new FileReader(new File(args[0]));
+			FileReader fr = new FileReader(new File(path));
 			BufferedReader buff = new BufferedReader(fr);
 			String line = null;
 			System.out.println("\nRESULTS");
