@@ -1,8 +1,8 @@
 package com.rackerrank.designerpdfviewer;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 //https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
 public class DesignerPdfViewer {
@@ -13,49 +13,18 @@ public class DesignerPdfViewer {
         System.out.println(run(h,word));
     }
 
-    public static int run(List<Integer> h, String word) {
-        // Write your code here
-        Map<String, Integer> mapWords = createMap(h);
-        String[] words = word.split("");
-        int biggest = 0;
-        int comparator = 0;
+    private static final String[] ALPHABET = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
-        for(int i = 0; i<word.length(); i++){
-            if(mapWords.get(words[i]) > biggest){
-                biggest = mapWords.get(words[i]);
-            }
-        }
-        return biggest * word.length();
+    public static int run(List<Integer> h, String word) {
+        Map<String, Integer> lettersHeight = createMap(h);
+        Set<String> letters = new HashSet<>(Arrays.asList(word.split("")));
+        Optional<Integer> max = letters.stream().map(lettersHeight::get).max(Integer::compareTo);
+        return max.map(biggest -> biggest * word.length()).orElseThrow();
     }
 
-    private static Map<String, Integer>  createMap(List<Integer> h) {
-        Map<String, Integer> mapWords = new HashMap<String, Integer>();
-        mapWords.put("a",h.get(0));
-        mapWords.put("b",h.get(1));
-        mapWords.put("c",h.get(2));
-        mapWords.put("d",h.get(3));
-        mapWords.put("e",h.get(4));
-        mapWords.put("f",h.get(5));
-        mapWords.put("g",h.get(6));
-        mapWords.put("h",h.get(7));
-        mapWords.put("i",h.get(8));
-        mapWords.put("j",h.get(9));
-        mapWords.put("k",h.get(10));
-        mapWords.put("l",h.get(11));
-        mapWords.put("m",h.get(12));
-        mapWords.put("n",h.get(13));
-        mapWords.put("o",h.get(14));
-        mapWords.put("p",h.get(15));
-        mapWords.put("q",h.get(16));
-        mapWords.put("r",h.get(17));
-        mapWords.put("s",h.get(18));
-        mapWords.put("t",h.get(19));
-        mapWords.put("u",h.get(20));
-        mapWords.put("v",h.get(21));
-        mapWords.put("w",h.get(22));
-        mapWords.put("x",h.get(23));
-        mapWords.put("y",h.get(24));
-        mapWords.put("z",h.get(25));
-        return mapWords;
+    private static Map<String, Integer> createMap(List<Integer> charactersHeight) {
+        return IntStream.range(0, charactersHeight.size())
+                .mapToObj(i -> Map.entry(ALPHABET[i], charactersHeight.get(i)))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 }
