@@ -27,8 +27,8 @@ public class MarsExploration {
                 if (!new Character('S').equals(s.charAt(i + 2))) {
                     sum++;
                 }
-                i++;
             }
+            i++;
         }
         return sum;
     }
